@@ -37,7 +37,7 @@
     </div>
     <div class="half-containers">
       <h2 matSubheader [style.marginTop.em]="2">Catalog Promotion Tutorial</h2>
-      <p [style.width.%]="90" >
+      <p [style.width.%]="90">
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -81,7 +81,7 @@
       </select>
     </mat-form-field>
     <mat-icon matTooltip="Lorem ipsum" color="primary">info</mat-icon>
-    <h4 [style.marginTop.em]=1>Benefit ammount</h4>
+    <h4 [style.marginTop.em]="1">Benefit ammount</h4>
     <mat-form-field appearance="fill" [style.width.%]="90">
       <mat-label>Enter a date range</mat-label>
       <mat-date-range-input [rangePicker]="picker">
@@ -105,7 +105,7 @@
       <mat-radio-button
         *ngFor="let b of keys(buisnessConditionTypes)"
         [value]="buisnessConditionTypes[b]"
-        [style.width.%]=45
+        [style.width.%]="45"
       >
         {{ buisnessConditionTypes[b] }}
       </mat-radio-button>
@@ -118,7 +118,7 @@
         id="otherPromotionsConnection"
         name="otherPromotionsConnection"
         formControlName="otherPromotionsConnection"
-        [style.width.%]=90
+        [style.width.%]="90"
       >
         Connect with other promotions
       </mat-checkbox>
@@ -130,7 +130,7 @@
         id="backPromotion"
         name="backPromotion"
         formControlName="backPromotion"
-        [style.width.%]=90
+        [style.width.%]="90"
       >
         Back Promotion
       </mat-checkbox>

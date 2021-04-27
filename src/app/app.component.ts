@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JSONSchema, StorageMap } from '@ngx-pwa/local-storage';
 import { Observable } from 'rxjs';
-import { routes } from './app.module';
 import { BusinessConditionType, ConditionType, PortalType, Definition } from './models/definition';
+import { routes } from './routes';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   title = 'recruitment-task';
   marketingDefinition$: Observable<Definition>;
 
-  constructor(private storage: StorageMap) {}
+  constructor(private storage: StorageMap) { }
 
   ngOnInit() {
     const schema: JSONSchema = {
@@ -29,17 +29,17 @@ export class AppComponent implements OnInit {
         buisnessConditionType: { type: 'string', enum: Object.values(BusinessConditionType) },
         otherPromotionsConnection: { type: 'boolean' },
         backPromotion: { type: 'boolean' },
-        startDate: {type:'string'},
-        endDate: {type:'string'},
+        startDate: { type: 'string' },
+        endDate: { type: 'string' },
       },
-       required: ['marketingName']
+      required: ['marketingName']
     };
     this.storage.clear();
     this.marketingDefinition$ = this.storage.watch<Definition>('marketingDefinition', schema);
     this.marketingDefinition$.subscribe(
       {
         next: (values) => {
-          if(values){
+          if (values) {
             (!!values.marketingName || !!values.technicialName) ? this.disableLink = false : this.disableLink = true
           } else this.disableLink = true;
         },

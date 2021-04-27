@@ -1,23 +1,38 @@
 <mat-drawer-container class="drawer-container">
   <mat-drawer mode="side" class="nav-list" opened>
-    <mat-nav-list >
+    <mat-nav-list>
       <mat-list-item
         *ngFor="let route of routes"
         [routerLinkActive]="['active']"
+      >
+        <a
+          matLine
+          [class.disabled]="disableLink ? true : null"
+          [routerLinkActive]="['active']"
+          [routerLink]="route.path"
         >
-        <a matLine [class.disabled]="disableLink ? true : null" [routerLinkActive]="['active']" [routerLink]="route.path">
-          <button mat-mini-fab routerLinkActive="active" #rla="routerLinkActive" [color]="rla.isActive? 'red':'grey'">
-          {{route.data.step}}
+          <button
+            mat-mini-fab
+            routerLinkActive="active"
+            #rla="routerLinkActive"
+            [color]="rla.isActive ? 'red' : 'grey'"
+          >
+            {{ route.data.step }}
           </button>
-          {{route.data.label}}
-          <mat-icon *ngIf="route.data.icon" [style.marginLeft.rem]=1 matTooltip="Lorem ipsum" color="primary">info</mat-icon>
+          {{ route.data.label }}
+          <mat-icon
+            *ngIf="route.data.icon"
+            [style.marginLeft.rem]="1"
+            matTooltip="Lorem ipsum"
+            color="primary"
+            >info</mat-icon
+          >
         </a>
         <mat-divider></mat-divider>
       </mat-list-item>
-    </mat-nav-list >
+    </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
-

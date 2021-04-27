@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class SummaryComponent implements OnInit {
 
   submitted: boolean = false;
-  marketingNames = [{id : 1, marketingName: "Mock Value 1 Link not working"},
-                    {id:2, marketingName: "Mock Value 2 Link not working"}];
+  marketingNames = [{ id: 1, marketingName: "Mock Value 1 Link not working" },
+  { id: 2, marketingName: "Mock Value 2 Link not working" }];
 
   displayedColumns: string[] = ['marketingName', 'editIcon', 'deleteIcon'];
 
@@ -21,18 +21,18 @@ export class SummaryComponent implements OnInit {
 
   ngOnInit(): void {
     this.storage.get('marketingDefinition').subscribe({
-      next: (values:Definition)=> values.marketingName?
-       this.marketingNames.push({id: this.marketingNames.length + 1, marketingName: values.marketingName}) : null
+      next: (values: Definition) => values.marketingName ?
+        this.marketingNames.push({ id: this.marketingNames.length + 1, marketingName: values.marketingName }) : null
     })
   }
 
-  submit(): void{
+  submit(): void {
     this.submitted = true;
   }
 
-  deleteMarketing(id:number):void{
-    this.marketingNames=this.marketingNames.filter((m)=> (m.id!== id))
-    this.storage.clear().subscribe(() => {});
+  deleteMarketing(id: number): void {
+    this.marketingNames = this.marketingNames.filter((m) => (m.id !== id))
+    this.storage.clear().subscribe(() => { });
     this.route.navigateByUrl('/definition');
   }
 }
