@@ -1,19 +1,22 @@
+  $primary-color: #8b0000;
+  $background:#f7f7f7;
+
 .drawer-container {
   width: calc(100% - 60px);
   min-height: calc(100% - 60px);
   margin: 30px;
   border: 1px solid rgb(156, 156, 156);
-  background-color: #f7f7f7;
+  background-color: $background;
 }
 
 .nav-list {
   min-width: 20%;
-  background-color: #f7f7f7;
+  background-color: $background;
   border-right: 3px solid white;
 }
 
 .mat-red {
-  background-color: #8b0000;
+  background-color: $primary-color;
   color: white;
   box-shadow: none;
 }
@@ -44,7 +47,7 @@ a.active {
 }
 .mat-list-base {
   padding: 0px;
-  background-color: #f7f7f7;
+  background-color: $background;
 }
 
 .mat-drawer {
