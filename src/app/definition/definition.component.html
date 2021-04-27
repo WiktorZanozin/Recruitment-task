@@ -1,0 +1,140 @@
+<div [formGroup]="marketingForm" class="main-container">
+  <div class="left-container">
+    <h2 matSubheader>Description</h2>
+    <div class="half-containers">
+      <mat-form-field appearance="fill" [style.width.%]="90">
+        <mat-label>Marketing name</mat-label>
+        <input
+          matInput
+          required
+          id="marketingName"
+          name="marketingName"
+          formControlName="marketingName"
+        />
+      </mat-form-field>
+      <mat-icon matTooltip="Lorem ipsum" color="primary">info</mat-icon>
+      <mat-form-field appearance="fill" [style.width.%]="90">
+        <mat-label>Technicial name</mat-label>
+        <input
+          matInput
+          id="technicialName"
+          name="technicialName"
+          formControlName="technicialName"
+        />
+      </mat-form-field>
+      <mat-icon matTooltip="Lorem ipsum" color="primary">info</mat-icon>
+      <mat-form-field appearance="fill" [style.width.%]="90">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          id="description"
+          name="description"
+          formControlName="description"
+          [style.height.em]="7"
+        ></textarea>
+      </mat-form-field>
+      <mat-icon matTooltip="Lorem ipsum" color="primary">info</mat-icon>
+    </div>
+    <div class="half-containers">
+      <h2 matSubheader [style.marginTop.em]="2">Catalog Promotion Tutorial</h2>
+      <p [style.width.%]="90" >
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum."
+      </p>
+    </div>
+  </div>
+
+  <div class="right-container">
+    <h2 matSubheader>Conditions</h2>
+    <mat-form-field appearance="fill" [style.width.%]="90">
+      <mat-label>Portal</mat-label>
+      <select
+        matNativeControl
+        required
+        id="portaltype"
+        name="portalType"
+        formControlName="portalType"
+      >
+        <option *ngFor="let p of keys(portalTypes)">
+          {{ portalTypes[p] }}
+        </option>
+      </select>
+    </mat-form-field>
+    <mat-icon matTooltip="Lorem ipsum" color="primary">info</mat-icon>
+    <mat-form-field appearance="fill" [style.width.%]="90">
+      <mat-label>Type</mat-label>
+      <select
+        matNativeControl
+        required
+        id="conditionType"
+        name="conditionType"
+        formControlName="conditionType"
+      >
+        <option *ngFor="let c of keys(conditionTypes)">
+          {{ conditionTypes[c] }}
+        </option>
+      </select>
+    </mat-form-field>
+    <mat-icon matTooltip="Lorem ipsum" color="primary">info</mat-icon>
+    <h4 [style.marginTop.em]=1>Benefit ammount</h4>
+    <mat-form-field appearance="fill" [style.width.%]="90">
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input
+          required
+          matStartDate
+          placeholder="Start date"
+          formControlName="startDate"
+        />
+        <input matEndDate placeholder="End date" formControlName="endDate" />
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+    <mat-icon matTooltip="Lorem ipsum" color="primary">info</mat-icon>
+
+    <mat-radio-group
+      aria-label="Select an option"
+      formControlName="buisnessConditionType"
+    >
+      <mat-radio-button
+        *ngFor="let b of keys(buisnessConditionTypes)"
+        [value]="buisnessConditionTypes[b]"
+        [style.width.%]=45
+      >
+        {{ buisnessConditionTypes[b] }}
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-icon matTooltip="Lorem ipsum" color="primary">info</mat-icon>
+
+    <div [style.marginTop.em]="1">
+      <mat-checkbox
+        color="accent"
+        id="otherPromotionsConnection"
+        name="otherPromotionsConnection"
+        formControlName="otherPromotionsConnection"
+        [style.width.%]=90
+      >
+        Connect with other promotions
+      </mat-checkbox>
+      <mat-icon matTooltip="Lorem ipsum" color="primary">info</mat-icon>
+    </div>
+    <div [style.marginTop.em]="1">
+      <mat-checkbox
+        color="accent"
+        id="backPromotion"
+        name="backPromotion"
+        formControlName="backPromotion"
+        [style.width.%]=90
+      >
+        Back Promotion
+      </mat-checkbox>
+      <mat-icon matTooltip="Lorem ipsum" color="primary">info</mat-icon>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div *ngIf="!submitted" class="submit-data-dialog">
+  <h1 mat-dialog-title>Submit your changes!</h1>
+  <button mat-button primary class="red-button" (click)="submit()">
+    Submit
+  </button>
+</div>
+<div *ngIf="submitted" multiTemplateDataRows class="mat-elevation-z8">
+  <table *ngIf="submitted" mat-table [dataSource]="marketingNames">
+    <ng-container matColumnDef="marketingName">
+      <th mat-header-cell *matHeaderCellDef>Marketing name</th>
+      <td mat-cell *matCellDef="let element">{{ element.marketingName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="editIcon">
+      <th mat-header-cell *matHeaderCellDef>Edit</th>
+      <td mat-cell *matCellDef="let element">
+       <a [routerLink]="['/definition']" mat-icon-button color="primary" aria-label="Edit Icon">
+        <mat-icon>edit</mat-icon>
+       </a>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="deleteIcon">
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
+      <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary" aria-label="Delete Icon" (click)="deleteMarketing(element.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -1,0 +1,50 @@
+.drawer-container {
+  width: calc(100% - 60px);
+  min-height: calc(100% - 60px);
+  margin: 30px;
+  border: 1px solid rgb(156, 156, 156);
+  background-color: #f7f7f7;
+}
+
+.nav-list {
+  min-width: 20%;
+  background-color: #f7f7f7;
+  border-right: 3px solid white;
+}
+
+
+.mat-red{
+  background-color: #8b0000;
+  color: white;
+  box-shadow: none;
+}
+
+.mat-divider {
+  border-top-color: white;
+}
+
+.mat-grey{
+  background-color:#505050;
+  color: white;
+  box-shadow: none;
+}
+
+.mat-light-grey{
+  background-color:#888787;
+  color: white;
+  box-shadow: none;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.mat-list-base{
+  padding:0px;
+  background-color: #f7f7f7;
+}
+
+.mat-drawer{
+  background-color: white;
+}
