@@ -38,7 +38,10 @@ a.disabled {
   pointer-events: none;
   cursor: not-allowed;
 }
-
+a.active {
+  color: black;
+  font-weight: 400;
+}
 .mat-list-base {
   padding: 0px;
   background-color: #f7f7f7;

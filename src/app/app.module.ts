@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from './wizard/material.module';
+import { MaterialModule } from './material.module';
 import { RouterModule, Routes } from '@angular/router';
 import { DefinitionComponent } from './definition/definition.component';
 import { LoremComponent } from './lorem/lorem.component';
