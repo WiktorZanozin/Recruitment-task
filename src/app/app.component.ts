@@ -12,7 +12,6 @@ import { routes } from './routes';
 export class AppComponent implements OnInit {
   disableLink: boolean = true;
   routes = routes.slice(1);
-  title = 'recruitment-task';
   marketingDefinition$: Observable<Definition>;
 
   constructor(private storage: StorageMap) { }
@@ -34,7 +33,7 @@ export class AppComponent implements OnInit {
       },
       required: ['marketingName']
     };
-    this.storage.clear();
+
     this.marketingDefinition$ = this.storage.watch<Definition>('marketingDefinition', schema);
     this.marketingDefinition$.subscribe(
       {
